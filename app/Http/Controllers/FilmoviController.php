@@ -49,7 +49,8 @@ class FilmoviController extends Controller
     //Get Filmovi And Zanr
     public function getFilmoviAndZanr(){
       $filmovi= Filmovi::orderBy('naslov')->get();
-      $zanr=Zanr::all();
+      //$zanr=Zanr::all();
+      $zanr=Zanr::orderBy('naziv')->get();
       return view ('unos')->with('filmovi', $filmovi)->with('zanr', $zanr);
     }
 
